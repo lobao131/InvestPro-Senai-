@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestPro - Simulador Financeiro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Simulador Renda Fixa</h1>
+        <p>Rentabilidade Líquida, Ganho Real e Renda Passiva</p>
+    </header>
+
+    <div class="concepts-grid">
+        <div class="concept-card">
+            <h3>SELIC <span class="tag">15% a.a.</span></h3>
+            <p>Taxa básica da economia. Define o rendimento do Tesouro Selic.</p>
+        </div>
+        <div class="concept-card" style="border-left-color: var(--accent);">
+            <h3>CDI <span class="tag" style="background:var(--accent)">14.9% a.a.</span></h3>
+            <p>Referência para bancos. CDBs pagam uma porcentagem desta taxa.</p>
+        </div>
+        <div class="concept-card" style="border-left-color: #e74c3c;">
+            <h3>IPCA <span class="tag" style="background:#e74c3c">Inflação 6%</span></h3>
+            <p>Índice de preços. Seu dinheiro precisa render mais que isso.</p>
+        </div>
+        <div class="concept-card" style="border-left-color: #6c757d;">
+            <h3>Poupança <span class="tag" style="background:#6c757d">Isento IR</span></h3>
+            <p>Se a Selic > 8.5%, rende 0.5% ao mês + TR e se a SELIC < 8.5%, rende 70% da SELIC. Prática, mas costuma perder feio.</p>
+        </div>
+    </div>
+
+    <div class="calculator-section">
+        <div class="inputs-row">
+            <div class="input-group">
+                <label>Valor para Investir (R$)</label>
+                <input type="number" id="valor" value="1000000" step="any">
+            </div>
+            <div class="input-group">
+                <label>Tempo (Meses)</label>
+                <input type="number" id="tempo" value = "12">
+            </div>
+        </div>
+
+        <button onclick="calcular()">CALCULAR RESULTADOS</button>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <h4>Poupança</h4>
+                <div class="value" id="val-poupanca">R$ ...</div>
+                <div class="real-gain-box">
+                    Ganho Real: <span class="real-gain-value" id="real-poupanca">...</span>
+                </div>
+                <div class="monthly-income-box">
+                    Renda Mensal Estimada: <strong id="renda-poupanca">...</strong>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h4>Tesouro Selic</h4>
+                <div class="value" id="val-selic">R$ ...</div>
+                <div class="real-gain-box">
+                    Ganho Real: <span class="real-gain-value" id="real-selic">...</span>
+                </div>
+                <div class="monthly-income-box">
+                    Renda Mensal Estimada: <strong id="renda-selic">...</strong>
+                </div>
+            </div>
+
+            <div class="result-card winner">
+                <h4>CDB 105% CDI</h4>
+                <div class="value" id="val-cdb" style="color: var(--secondary);">R$ ...</div>
+                <div class="real-gain-box" style="background-color: #d1fae5;">
+                    Ganho Real: <span class="real-gain-value" id="real-cdb">...</span>
+                </div>
+                <div class="monthly-income-box">
+                    Renda Mensal Estimada: <strong id="renda-cdb">...</strong>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h4>Tesouro IPCA</h4>
+                <div class="value" id="val-ipca">R$ ...</div>
+                <div class="real-gain-box">
+                    Ganho Real: <span class="real-gain-value" id="real-ipca">...</span>
+                </div>
+                <div class="monthly-income-box">
+                    Renda Mensal Estimada: <strong id="renda-ipca">...</strong>
+                </div>
+            </div>
+        </div>
+        <p class="disclaimer">
+            *Simulação didática. A Renda Mensal é estimada sobre o montante final acumulado.
+        </p>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
