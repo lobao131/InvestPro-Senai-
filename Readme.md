@@ -1,4 +1,4 @@
-# InvestPro - Simulador de Renda Fixa
+# InvestRenda - Simulador de renda passiva com Renda Fixa
 
 ## 1. Descrição do Sistema (Mini-Mundo)
 O **InvestRenda** é uma aplicação web focada em educação financeira e projeção de investimentos. Diferente de calculadoras comuns, ele explica ao investidor iniciante a "sopa de letrinhas" do mercado (CDI, SELIC, IPCA). 
@@ -24,3 +24,4 @@ O sistema permite que o usuário insira um valor e um prazo em que deseja ter ac
 ## 4. Autoria e Licença
 
 Projeto desenvolvido por Pedro Lobão - Curso de FrontEnd SENAI.
+
