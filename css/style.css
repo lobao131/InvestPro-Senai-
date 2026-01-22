@@ -1,4 +1,4 @@
-/* --- ESTILOS VISUAIS (CSS) --- */
+
 :root {
     --primary: #0056b3;   
     --secondary: #00a86b; 
@@ -43,12 +43,12 @@ header p { color: var(--text-light); }
     border-left: 5px solid var(--primary);
     transition: transform 0.2s;
 }
-.concept-card:hover { transform: translateY(-5px); }
+
 .concept-card h3 { color: var(--primary); margin-top: 0; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
 .concept-card p { font-size: 0.9rem; line-height: 1.5; color: var(--text-light); }
 .tag { font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; color: #fff; background: var(--primary); }
 
-/* CALCULADORA */
+
 .calculator-section {
     background: var(--card-bg);
     padding: 30px;
@@ -108,5 +108,3 @@ button:hover { background-color: #008f5b; }
     color: var(--income-color);
     font-size: 1.1rem;
 }
-
-.disclaimer { text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999; }
