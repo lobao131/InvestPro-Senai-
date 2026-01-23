@@ -1,110 +1,173 @@
-
+/* Variáveis de Cores (Paleta do projeto) */
 :root {
-    --primary: #0056b3;   
-    --secondary: #00a86b; 
-    --accent: #ff9f43;    
-    --bg: #f0f2f5;
-    --card-bg: #ffffff;
-    --text-main: #333;
-    --text-light: #666;
-    --danger: #dc3545;
-    --income-color: #6b21a8; /* Roxo para Renda Passiva */
+    --azul-principal: #0056b3;   
+    --verde-sucesso: #00a86b; 
+    --laranja-destaque: #ff9f43;    
+    --fundo-cinza: #f0f2f5;
+    --fundo-card: #ffffff;
+    --texto-escuro: #333;
+    --texto-cinza: #666;
+    --vermelho-erro: #dc3545;
 }
 
+/* Configurações Gerais */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg);
-    color: var(--text-main);
+    font-family: sans-serif; /* Fonte simples */
+    background-color: var(--fundo-cinza);
+    color: var(--texto-escuro);
     margin: 0;
     padding: 20px;
+    /* Centralizando tudo na tela */
     display: flex;
     justify-content: center;
 }
 
-.container { max-width: 1000px; width: 100%; }
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
 
-header { text-align: center; margin-bottom: 30px; }
-header h1 { color: var(--primary); margin: 0 0 10px 0; }
-header p { color: var(--text-light); }
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-/* CARDS EDUCATIVOS */
+header h1 {
+    color: var(--azul-principal);
+    margin-bottom: 10px;
+}
+
+header p {
+    color: var(--texto-cinza);
+}
+
+/* Cards de Conceitos (Parte de cima) */
 .concepts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsivo padrão */
     gap: 20px;
     margin-bottom: 30px;
 }
 
 .concept-card {
-    background: var(--card-bg);
+    background: var(--fundo-card);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--primary);
-    transition: transform 0.2s;
+    /* Borda lateral azul padrão */
+    border-left: 5px solid var(--azul-principal);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
-.concept-card h3 { color: var(--primary); margin-top: 0; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
-.concept-card p { font-size: 0.9rem; line-height: 1.5; color: var(--text-light); }
-.tag { font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; color: #fff; background: var(--primary); }
+.concept-card h3 {
+    color: var(--azul-principal);
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
 
+.tag {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    background: var(--azul-principal);
+}
 
+/* Área da Calculadora */
 .calculator-section {
-    background: var(--card-bg);
+    background: var(--fundo-card);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.inputs-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.input-group { flex: 1; min-width: 200px; }
-.input-group label { display: block; font-weight: bold; margin-bottom: 8px; }
+.inputs-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Quebra linha se a tela for pequena */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
 
 input {
-    width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1.1rem; box-sizing: border-box;
-}
-
-button {
-    width: 100%; padding: 15px; background: var(--secondary); color: white; border: none; border-radius: 8px; font-size: 1.2rem; cursor: pointer; font-weight: bold; transition: background 0.3s;
-}
-button:hover { background-color: #008f5b; }
-
-/* RESULTADOS */
-.results-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px;
-}
-.result-card {
-    background: #f8f9fa; border: 1px solid #eee; padding: 20px; border-radius: 10px; text-align: center;
-    display: flex; flex-direction: column; justify-content: space-between;
-}
-.result-card.winner { border: 2px solid var(--secondary); background: #f0fdf4; }
-
-.result-card h4 { margin: 0; color: #555; }
-.value { font-size: 1.5rem; font-weight: bold; margin: 10px 0; color: #333; }
-
-/* Ganho Real e Renda Mensal */
-.real-gain-box {
-    background: #eef2ff;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
     border-radius: 8px;
-    padding: 8px;
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: #444;
+    font-size: 1.1rem;
+    box-sizing: border-box; /* Para o padding não aumentar o tamanho total */
 }
-.real-gain-value {
-    display: block; font-weight: bold; color: var(--secondary); font-size: 1rem;
-}
-.real-gain-value.negative { color: var(--danger); }
 
-/* Estilo novo para a Renda Mensal */
-.monthly-income-box {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px dashed #ccc;
-    font-size: 0.9rem;
+/* Botão de Calcular */
+button {
+    width: 100%;
+    padding: 15px;
+    background: var(--verde-sucesso);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #008f5b; /* Verde um pouco mais escuro */
+}
+
+/* Área dos Resultados */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.result-card {
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-card h4 {
+    margin: 0;
     color: #555;
 }
-.monthly-income-box strong {
-    color: var(--income-color);
-    font-size: 1.1rem;
+
+.value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: var(--texto-escuro); /* Cor padrão para todos */
+}
+
+/* Caixinha da Rentabilidade Líquida */
+.real-gain-box {
+    background: #eef2ff; /* Azul claro */
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.real-gain-value {
+    display: block;
+    font-weight: bold;
+    color: var(--verde-sucesso);
+    font-size: 1rem;
+    margin-top: 5px;
 }
